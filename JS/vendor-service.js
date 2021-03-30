@@ -25,8 +25,10 @@ const vendorChange = (vendor) => {
         contentType: "application/json"
     })
 }
-const vendorDelete = (vendor) => {
-    return $.ajax({
+
+const vendorRemove = (vendor) => {
+        return $.ajax({
+        // return $.getJSON(`${url}${id}`);
         method:"DELETE",
         url: url,
         data: JSON.stringify(vendor),

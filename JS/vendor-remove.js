@@ -1,11 +1,18 @@
 let singlevendor = null;
 
 $().ready(() => {
+    console.log("IN jQuery");
 
-    vendorDelete(6)
+    vendorDetail(3)
         .done((vendor) => {
             singlevendor = vendor;
+            display(singlevendor);
         })
+        .fail((err) => {
+            alert("Vendor not found!");
+        });
+
+});
         
         $("#delete").click(() => {
             console.log("Click!");
@@ -24,7 +31,7 @@ $().ready(() => {
             }
             console.log(vendor);
             
-            vendorDelete(vendor)
+            vendorRemove(vendor)
             .done((res) => {
                 console.log("Delete successful: ", res);
             })
@@ -33,7 +40,7 @@ $().ready(() => {
             })
         })
 
-    });
+
 
 const display = (vendor) => {
     $("#pid").text(vendor.id);

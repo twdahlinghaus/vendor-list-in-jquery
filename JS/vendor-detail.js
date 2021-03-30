@@ -2,7 +2,7 @@ let singlevendor = null;
 
 $().ready(() => {
 
-    vendorDetail(3)
+    vendorDetail(2)
         .done((vendor) => {
             singlevendor = vendor;
             display(singlevendor);
